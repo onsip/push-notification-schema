@@ -1,0 +1,20 @@
+{
+  "name": "push-notification-schema",
+  "version": "1.0.0",
+  "description": "OnSIP Push Notification Schema",
+  "main": "poc.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jasmine"
+  },
+  "author": "Max Rothstein",
+  "license": "ISC",
+  "devDependencies": {
+    "jasmine": "^2.6.0"
+  },
+  "dependencies": {
+    "jsonschema": "^1.1.1"
+  }
+}

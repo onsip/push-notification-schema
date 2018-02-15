@@ -1,0 +1,30 @@
+{
+  "schema": "http://json-schema.org/draft-04/schema#",
+  "title": "OnSIP Push Notification",
+
+  "definitions": {
+    "sip": {
+      "type": "object",
+      "properties": {
+        "method": { "type": "string" },
+        "aor": { "type": "string" },
+        "callid": { "type": "string" },
+        "fromtag": { "type": "string" }
+      },
+      "required": ["method", "aor", "fromtag"]
+    }
+  },
+
+  "type": "object",
+  "properties": {
+    "data": {
+        "type": "object",
+        "properties": {
+            "sip": { "$ref": "#/definitions/sip" }
+        }
+    },
+    "required": ["sip"]
+  },
+  "required": ["data"]
+}
+
