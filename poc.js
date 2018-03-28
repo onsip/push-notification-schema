@@ -2,23 +2,39 @@
 
 const Validator = require('jsonschema').Validator;
 
-function run() {
-  const eventSchema = require("./schemas/base.json");
+const runRegister = () => {
+  const eventSchema = require("./schemas/sip/register.json");
   const v = new Validator();
 
   const instance = {
     "data": {
-        "sip": {
-            "aor": "sip:grant@wubs.onsip.com",
-            "callid": "\"Grant\" <grant@wubs.onsip.com>",
-            "fromtag": "...",
-            "method": "...", // "INVITE" or "REGISTER" (documented) - see about enum
-            "uri": "..." // deprecated
-        }
+      "type": "sip.register",
+      "payload": {
+        "aor": "sip:grant@test.onsip.com"
+      }
     }
   };
 
   console.log(v.validate(instance, eventSchema));
-}
+};
 
-run();
+const runInvite = () => {
+  const eventSchema = require("./schemas/sip/invite.json");
+  const v = new Validator();
+
+  const instance = {
+    "data": {
+      "type": "sip.invite",
+      "payload": {
+        "aor": "sip:grant@test.onsip.com",
+        "server": "edge.sip.onsip.com",
+        "callid": "abc294dj349rgj"
+      }
+    }
+  };
+
+  console.log(v.validate(instance, eventSchema));
+};
+
+runRegister();
+runInvite();

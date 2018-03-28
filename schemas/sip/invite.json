@@ -1,0 +1,29 @@
+{
+  "schema": "http://json-schema.org/draft-04/schema#",
+  "title": "OnSIP Push Notification for an INVITE",
+
+  "definitions": {
+    "payload": {
+      "type": "object",
+      "properties": {
+        "aor": { "type": "string" },
+        "server": { "type": "string" },
+        "callid": { "type": "string" }
+      },
+      "required": ["aor", "server", "callid"]
+    }
+  },
+
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "object",
+      "properties": {
+        "type": { "type": "string" },
+        "payload": { "$ref": "#/definitions/payload" }
+      },
+      "required": ["type", "payload"]
+    }
+  },
+  "required": ["data"]
+}
