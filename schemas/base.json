@@ -1,29 +1,37 @@
 {
-  "schema": "http://json-schema.org/draft-04/schema#",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "OnSIP Push Notification",
+  "Description": "This is the minimum requirement a push notification must conform to",
+  "$id": "https://raw.githubusercontent.com/onsip/push-notification-schema/dev-kevin-test/schemas/base.json",
 
   "definitions": {
     "sip": {
       "type": "object",
       "properties": {
-        "method": { "type": "string" },
         "aor": { "type": "string" },
-        "callid": { "type": "string" },
-        "fromtag": { "type": "string" }
+        "type": { "type": "string" }
       },
-      "required": ["method", "aor", "fromtag"]
+      "required": ["aor", "type"]
+    },
+    "payload": {
+      "type": "object",
+      "properties": {
+        "method": { "type": "string" }
+      },
+      "required": ["method"]
     }
   },
 
   "type": "object",
   "properties": {
     "data": {
-        "type": "object",
-        "properties": {
-            "sip": { "$ref": "#/definitions/sip" }
-        }
-    },
-    "required": ["sip"]
+      "type": "object",
+      "properties": {
+        "sip": { "$ref": "#/definitions/sip" },
+        "payload": { "$ref": "#/definitions/payload" }
+      },
+      "required": ["sip"]
+    }
   },
   "required": ["data"]
 }
