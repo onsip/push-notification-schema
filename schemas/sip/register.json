@@ -13,7 +13,7 @@
   },
 
   "allOf": [
-    { "$ref": "https://raw.githubusercontent.com/onsip/push-notification-schema/dev-kevin-test/schemas/base.json" },
+    { "$ref": "https://raw.githubusercontent.com/onsip/push-notification-schema/master/schemas/base.json" },
     {
       "type": "object",
       "properties": {

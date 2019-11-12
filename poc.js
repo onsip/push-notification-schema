@@ -19,7 +19,7 @@ function loadSchema(uri) {
 
 const runRegisterAsync = () => {
   const ajv = new Ajv({ allErrors: true, loadSchema: loadSchema });
-  const uri = "https://raw.githubusercontent.com/onsip/push-notification-schema/dev-kevin-test/schemas/sip/register.json";
+  const uri = "https://raw.githubusercontent.com/onsip/push-notification-schema/master/schemas/sip/register.json";
 
   const instance = {
     "data": {
@@ -48,7 +48,7 @@ const runRegisterAsync = () => {
 
 const runInviteAsync = () => {
   const ajv = new Ajv({ allErrors: true, loadSchema: loadSchema });
-  const uri = "https://raw.githubusercontent.com/onsip/push-notification-schema/dev-kevin-test/schemas/sip/invite.json";
+  const uri = "https://raw.githubusercontent.com/onsip/push-notification-schema/master/schemas/sip/invite.json";
 
   const instance = {
     "data": {
@@ -77,7 +77,6 @@ const runInviteAsync = () => {
     }
   });
 };
-const registerSchema = require("./schemas/sip/register.json");
 
 const runInviteSync = () => {
   const ajv = new Ajv({ allErrors: true });

@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "OnSIP Push Notification",
   "Description": "This is the minimum requirement a push notification must conform to",
-  "$id": "https://raw.githubusercontent.com/onsip/push-notification-schema/dev-kevin-test/schemas/base.json",
+  "$id": "https://raw.githubusercontent.com/onsip/push-notification-schema/master/schemas/base.json",
 
   "definitions": {
     "sip": {
