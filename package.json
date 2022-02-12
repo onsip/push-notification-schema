@@ -15,7 +15,7 @@
     "jasmine": "^2.6.0"
   },
   "dependencies": {
-    "ajv": "^6.10.2",
+    "ajv": "^6.12.3",
     "request": "^2.88.0",
     "request-promise": "^4.2.5"
   }
